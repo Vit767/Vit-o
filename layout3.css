@@ -1,0 +1,107 @@
+/* Reset de estilos padrão para garantir consistência em diferentes navegadores */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+.highlight {
+    background-color: rgb(0, 3, 49);
+    color: rgb(226, 209, 54);
+    text-shadow: 1px 1px 3px rgb(0, 0, 0); /* Adiciona uma sombra ao texto */  
+}
+
+/* Estilos para a div container */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #01031d
+}
+
+/* Estilos para a coluna de menu */
+.sidebar {
+    flex: 1;
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+
+
+}
+
+
+.sidebar a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: inline-block; /* Para que o background se ajuste ao tamanho do texto */
+    padding: 5px 10px; /* Espaçamento interno para o fundo do hover */
+    transition: background-color 0.3s; /* Adiciona uma transição suave da cor do fundo */
+   /* text-shadow: 1px 1px 3px rgb(97, 97, 97); /* Adiciona uma sombra ao texto */
+}
+
+
+/* Estilos para a coluna de conteúdo principal */
+.main-content {
+    flex: 2;
+    padding: 20px;
+    border-left: 1px solid #000000;
+    
+
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 10px;
+  /*  text-shadow: 1px 1px 3px rgb(255, 255, 255); /* Adiciona uma sombra ao texto */
+}
+h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+   /* text-shadow: 1px 1px 3px rgb(252, 252, 252);  Adiciona uma sombra ao texto */
+}
+
+p {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+#nextPageButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#nextPageButton:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+    .responsive-menu {
+        flex-direction: column; /* Coloca os itens do menu em uma coluna */
+        align-items: center; /* Centraliza os itens na coluna */
+    }
+
+    .responsive-menu li {
+        margin-bottom: 10px; /* Espaçamento entre os itens do menu */
+    }
+}    
+    

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="layout3.css">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/src/js.cookie.min.js"></script>
+    <style>
+        .sidebar img,
+        .main-content img {
+            max-width: 100%; /* Garante que as imagens não ultrapassem o tamanho máximo do contêiner */
+            height: auto; /* Ajusta a altura proporcionalmente */
+           
+        }
+        
+        .column {
+            display: inline-block;
+            vertical-align: top;
+            width: 50%;
+        }
+        body {
+            background-color: #000000; /* Substitua pelo código de cor desejado */
+        
+            
+            overflow-x: hidden; /* Mantenha ou remova esta linha para controlar a rolagem horizontal */
+            overflow-y: auto; /* Adicione esta linha para permitir a rolagem vertical */
+        }
+        
+        .main-content p {
+            margin-bottom: 10px; /* Espaço abaixo dos parágrafos */
+        }
+        .main-content h2 {
+            margin-top: 20px; /* Espaço acima do título */
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2e2e35;
+            color: white;
+        
+        }
+        .footer a {
+            color: #f2f2f2; /* Cor dos links no rodapé */
+            text-decoration: none; /* Remover sublinhado */
+            margin: 0 10px; /* Espaçamento entre os links */
+        
+        }
+        .footer a:hover {
+            text-decoration: underline; /* Sublinhar ao passar o mouse */
+        }
+
+        .sidebar a {
+    /* ... outros estilos ... */
+    transition: none; /* Remover todas as transições */
+}
+
+        .sidebar a:hover span {
+            color: black; /* Cor do texto quando passa o mouse */
+        }
+
+
+        .sidebar a:hover {
+            background-color: rgb(255, 255, 255); /* Fundo preto quando passa o mouse */
+            color: rgb(0, 0, 0); /* Cor dos links quando passa o mouse */
+            width: 100%; /* Fundo preto se estende até a largura máxima do link */
+            box-sizing: border-box; /* Evita que o padding aumente a largura total */
+            padding: 5px 10px; /* Ajusta o padding para esquerda e direita */
+        }
+
+        
+        #cookie-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #000000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            color: #000000;
+        }
+
+        #cookie-message {
+            margin-bottom: 20px;
+        }
+
+        #cookie-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        #cookie-button-accept, #cookie-button-decline {
+            background-color: #0a4a75;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        
+        @media (max-width: 600px) {
+    .container {
+        display: block; /* Altera o display para empilhar as colunas */
+    }
+
+    .column {
+        width: 100%; /* Define a largura das colunas para 100% */
+    }
+
+    .sidebar, .main-content {
+        width: 80%; /* Define a largura da barra lateral e do conteúdo principal para 100% */
+    }
+  
+}
+
+    </style>
+    <title>VTA CURSOS PÁGINA PRINCIPAL</title>
+</head>
+<body>
+    <div class="container">
+        <div class="column">
+            <div class="sidebar">
+                <h2>Bem-vindo a VTA cursos</h2>
+                <img src="VTA 1.png" alt="Imagem do Menu">
+                <ul>
+                    <li><a href="#curso1">Contatos</a></li>
+                    <li><a href="páginacursogratuito.html">Curso gratuitos</a></li>
+                    <li><a href="Sitedocurso2.html">Curso pagos</a></li>
+                    <li><a href="sitelivrosgratuitos.html">Livros PDF's gratuitos</a></li>
+                    <li><a href="livrosavenda.html">Livros PDF's pagos</a></li>
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="column">
+            <div class="main-content">
+                <h1>VTA cursos, aprenda de forma prática... </h1>
+                <p>Seja bem-vindo a VTA cursos, aqui você melhorar seu conhecimento de uma maneira que o capacitará para o mercado de trabalho. </p>
+                <p>Venha aprender conosco ,somos os melhores ensinando !!.</p>
+                <img src="OIP6.jpg" alt="Imagem do Conteúdo">
+                <div class="h2-container">
+                    <h2>VTA cursos, be the best in all ways</h2>
+          </div>
+    </div>
+</div>
+
+</div>
+    <div class="footer">
+        <a href="páginacursogratuito.html">Cursos Gratuitos</a> |
+        <a href="contatos.html">Contatos</a> |
+        <a href="index.html">Página Inicial</a>
+    </div>
+    </div>
+
+    <div id="cookie-box">
+        <p id="cookie-message">Olá , tenha um excletente dia ! Estou passando para te avisar que o site utiliza cookies para melhorar a experiência do visitante. Aceitar cookies?</p>
+        <div id="cookie-buttons">
+            <button id="cookie-button-accept">Aceitar</button>
+            <button id="cookie-button-decline">Não Aceitar</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var usuarioEscolheuScroll = localStorage.getItem("escolheu_scroll");
+
+            if (!usuarioEscolheuScroll) {
+                document.getElementById("cookie-box").style.display = "block";
+            }
+
+            document.getElementById("cookie-button-accept").addEventListener("click", function () {
+                localStorage.setItem("escolheu_scroll", true);
+                document.body.style.backgroundColor = "black";
+                document.getElementById("cookie-box").style.display = "none";
+            });
+
+            document.getElementById("cookie-button-decline").addEventListener("click", function () {
+                localStorage.setItem("escolheu_scroll", false);
+                document.body.style.backgroundColor = "black";
+                document.getElementById("cookie-box").style.display = "none";
+            });
+        });
+    </script>
+</body>
+
+</div>
+
+ 
+</html>

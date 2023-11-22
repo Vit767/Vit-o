@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="livrosgratuitos2.css">
+    <p class="highlight">Por favor faça uma doação se puder, para que continuemos a produzir conteudos de qualidade , "Pix:aanalizador@gmail.com"   .</p>
+    <title> ONZE </title>
+    <style>
+        body {
+            text-align: center;
+            user-select: none;
+            background-color: black;
+            color: aliceblue;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #textoComImagem {
+            position: relative;
+            width: 300px; /* Largura desejada para a imagem */
+            height: 600px; /* Altura desejada para a imagem */
+            margin-bottom: 10px;
+        }
+
+        #imagemExemplo {
+            width: 100%;
+            height: 700px;
+            object-fit: cover; /* Garante que a imagem cubra todo o espaço, mantendo suas proporções */
+            border-radius: 10px; /* Adiciona bordas arredondadas à imagem */
+        }
+
+        #textoParaFalar {
+            position: absolute;
+            top: 50%; /* Centraliza verticalmente */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translate(-50%, -50%); /* Move de volta 50% da largura e 50% da altura */
+            width: 80%; /* Largura da caixa de texto */
+            height: 400px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 10px; /* Adiciona bordas arredondadas à caixa de texto */
+            resize: none;
+            margin-top: 350px; /* Adiciona margem superior de 20 pixels */
+            background-color: rgb(36, 2, 99);
+            color:yellow;
+        }
+
+        #botaoOuvir {
+            background-color: #711227d3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 70px;
+        }
+        #botaoOuvir:hover {
+    background-color: #1afff4; /* Cor diferente ao passar o mouse (pseudoclasse :hover) */
+    color:black;
+}
+h1{
+  color: rgb(240, 240, 240);
+  text-shadow: 1px 1px 3px rgb(68, 252, 237); /* Adiciona uma sombra ao texto */
+}
+@media only screen and (max-width: 767px) {
+
+
+    #imagemExemplo {
+            width: 100%;
+            height: 800px;
+            object-fit: cover; /* Garante que a imagem cubra todo o espaço, mantendo suas proporções */
+            border-radius: 10px; /* Adiciona bordas arredondadas à imagem */
+        }
+
+    #textoParaFalar {
+            position: absolute;
+            top: 50%; /* Centraliza verticalmente */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translate(-50%, -50%); /* Move de volta 50% da largura e 50% da altura */
+            width: 80%; /* Largura da caixa de texto */
+            height: 400px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 10px; /* Adiciona bordas arredondadas à caixa de texto */
+            resize: none;
+            margin-top: 500px; /* Adiciona margem superior de 20 pixels */
+        }
+
+
+
+}
+    </style>
+</head>
+<body>
+
+
+    <div id="container">
+        <h1>, PORTUGUÊS-INGLÊS </h1>
+        <p> Leia a história abaixo:</p>
+        
+        <textarea id="textoParaFalar" rows="4" cols="50"readonly>
+
+           
+            
+
+
+        </textarea>
+  
+
+ 
+
+        <img id="imagemExemplo" src="o legado de lysander e wolf.png" alt="Imagem de Exemplo">
+    </div>
+
+    <script>
+        function falar() {
+            var texto = document.getElementById("textoParaFalar").value;
+            var synth = window.speechSynthesis;
+            var utterance = new SpeechSynthesisUtterance(texto);
+            utterance.rate = 1.5; // Valor de exemplo, ajuste conforme necessário
+            synth.speak(utterance);
+        }
+    </script>
+<script>
+    function falar() {
+        var texto = document.getElementById("textoParaFalar").value;
+
+        // Check if the SpeechSynthesisUtterance object is available
+        if ('speechSynthesis' in window) {
+            var synth = window.speechSynthesis;
+            var utterance = new SpeechSynthesisUtterance(texto);
+            utterance.rate = 1.5; // Adjust the rate as needed
+
+            // Speak the text
+            synth.speak(utterance);
+        } else {
+            // If the SpeechSynthesisUtterance is not available, provide a fallback or alert the user
+            alert("A reprodução de áudio pode não ser suportada neste navegador. Tente em um navegador diferente.");
+        }
+    }
+</script>
+
+<script>
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  document.addEventListener('selectstart', event => event.preventDefault());
+</script>
+</body>
+</html>

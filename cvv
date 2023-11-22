@@ -1,0 +1,10 @@
+  body {
+            background-color: #ADD8E6; /* Código de cor para azul claro */
+            
+        }
+        .pergunta {
+            font-weight: bold; /* Define o estilo de negrito para perguntas */
+        }
+        .radio {
+            font-weight: normal; /* Define o estilo normal para rótulos de radio buttons */
+        }
