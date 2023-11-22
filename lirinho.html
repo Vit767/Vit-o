@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor de Voz</title>
+</head>
+<body>
+
+    <h1>Exemplo de Leitor de Voz</h1>
+    <p>Clique no botão para ouvir o texto:</p>
+    
+    <textarea id="textoParaFalar" rows="4" cols="50">THE ROYAL LOVE
+        UM AMOR REAL
+        
+        
+       
+        Era uma vez, em uma terra de beleza deslumbrante, aninhada entre colinas suaves e lagos cristalinos, vivia uma princesa chamada Isabella.
+        
+        
+        Ela era conhecida por sua beleza radiante e por seu coração generoso que se estendia a todos no reino.
+        
+        
+        O reino de Isabella era um refúgio de encanto, com jardins vibrantes e castelos imponentes que pareciam tocar o céu.
+        
+        
+        O ar estava repleto do doce perfume de flores desabrochando, e as melodias dos pássaros cantores dançavam na brisa suave.
+        
+       
+        Um dia, enquanto Isabella explorava o mercado movimentado, seus olhos encontraram os de um jovem chamado Miguel.
+        
+       
+        Apesar de sua vestimenta simples, havia uma centelha de bondade e resiliência em seus olhos que a cativou.
+        
+        
+        Intrigada, Isabella buscou saber mais sobre o jovem misterioso.
+        
+        
+        Ao longo dos dias, eles se encontravam secretamente nos cantos encantados do reino.
+        
+        
+        As conversas fluíam como riachos suaves, e Isabella descobriu a história de Miguel, um artesão talentoso que sonhava em criar obras de arte para enriquecer a vida das pessoas.
+        
+        
+        Sua amizade se transformou em um amor puro e indomado, assim como as flores silvestres que enfeitavam as encostas das colinas.
+        
+        
+        Isabella enxergava além das circunstâncias modestas de Miguel, reconhecendo a riqueza de seu espírito e a beleza de seus sonhos.
+        
+        
+        No entanto, o caminho do verdadeiro amor raramente é tranquilo, e a revelação de sua ligação causou uma tempestade na corte real.
+        
+       
+        O rei e a rainha, cegos pelas expectativas sociais, opuseram-se à união deles, considerando Miguel indigno da mão da princesa.
+        
+       
+        Inabaláveis, Isabella e Miguel enfrentaram a tempestade juntos, tirando força do amor que unia seus corações.
+        
+       
+        Embarcaram em uma jornada para provar que o amor transcende barreiras sociais e que a verdadeira riqueza de um reino está na felicidade de seu povo.
+        
+       
+        Desafiando convenções, inspiraram mudanças no reino.
+        
+        
+        As muralhas que separavam as classes sociais começaram a desmoronar, dando lugar a um reino onde o amor e a compreensão floresciam.
+        
+       
+        No final, o amor de Isabella e Miguel prevaleceu, não apenas unindo seus corações, mas também transformando o reino em um domínio onde a compaixão e a aceitação reinavam supremas.
+        
+       
+        E assim, em meio a uma beleza incomparável, uma história de amor se desdobrou, provando que o amor não conhece fronteiras, e a verdadeira beleza reside na bondade do coração..</textarea>
+    
+    <button onclick="falar()">Ouvir Texto</button>
+
+    <script>
+        function falar() {
+            var texto = document.getElementById("textoParaFalar").value;
+            var synth = window.speechSynthesis;
+            var utterance = new SpeechSynthesisUtterance(texto);
+            synth.speak(utterance);
+        }
+    </script>
+
+</body>
+</html>

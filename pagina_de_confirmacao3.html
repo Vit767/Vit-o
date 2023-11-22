@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Incluindo o arquivo CSS externo -->
+    <title>Perguntas e Respostas</title>
+    <style>
+        body {
+            background-color: #010a0e; /* Código de cor para azul claro */
+            
+        }
+        .pergunta {
+            font-weight: bold; /* Define o estilo de negrito para perguntas */
+        }
+        .radio {
+            font-weight: normal; /* Define o estilo normal para rótulos de radio buttons */
+        }
+
+    </style>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<body>
+    <div class="texto-azul">Texto em azul</div>
+    </body>
+    
+    <h1>Perguntas e Respostas</h1>
+
+    <form>
+        <div class="pergunta"><br><br><br>
+            <p>Pergunta 1: Para que servem formulários no python e para que são usados ?</p>
+        </div>
+            <label>
+            
+                <input type="radio" name="resposta1" value="a"> a) Consultas , Agendas, Anotações e etc...
+            </label>
+            <label>
+                <input type="radio" name="resposta1" value="b"> b) Consultas ,Entregas, Cálculos e etc...
+            </label>
+            <label>
+                <input type="radio" name="resposta1" value="c"> c) Consultas,Anotações ,Explicações e etc...
+            </label>
+        </div><br>
+
+        <div class="pergunta"><br><br><br>
+            <p>Pergunta 2: Eixo x e y correspondentes a place como são feitos ?</p>
+        </div>
+            <label>
+                <input type="radio" name="resposta2" value="a"> a) place(x,y)
+            </label>
+            <label>
+                <input type="radio" name="resposta2" value="b"> b) place=(x=0,y=0)
+            </label>
+            <label>
+                <input type="radio" name="resposta2" value="c"> c) place(x=0,y=0)
+            </label>
+
+            <label>
+                <input type="radio" name="respota2" value="d"> d) place(x 0 , y 0 )
+            </label>
+
+
+        </div><br>
+
+
+           
+
+        </div><br><br><br><br>
+
+         <!--<button type="submit">Enviar Respostas</button>  -->
+         <button type="button" onclick="verificarRespostas()">Verificar Respostas</button>
+        
+        
+        
+         <div id="mensagem"
+            <p>Parabéns, você concluiu o curso!</p>
+            <label for="nome">Digite seu nome completo:</label>
+            <input type="text" id="nome" placeholder="Seu Nome"><br>
+            <button type="button" onclick="gerarCertificado()">Gerar Certificado</button>
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+        <script>
+            function gerarCertificado() {
+                var nome = document.getElementById("nome").value;
+                if (nome !== "") {
+                    var pdf = new jsPDF();
+                    pdf.text(50, 50, `Certificado de Conclusão`);
+                    pdf.text(50, 70, `Parabéns, ${nome}!`);
+                    pdf.save("certificado.pdf");
+                } else {
+                    alert("Por favor, digite seu nome completo.");
+                }
+            }
+    
+            function verificarRespostas() {
+                var respostasCorretas = ["a", "c"]; // Substitua com as respostas corretas
+                var totalPerguntas = 2; // Substitua com o número total de perguntas
+    
+                var respostasSelecionadas = [];
+                var radios = document.querySelectorAll("input[type='radio']:checked");
+                radios.forEach(function(radio) {
+                    respostasSelecionadas.push(radio.value);
+                });
+    
+                var respostasCorretasCount = 0;
+                for (var i = 0; i < respostasSelecionadas.length; i++) {
+                    if (respostasSelecionadas[i] === respostasCorretas[i]) {
+                        respostasCorretasCount++;
+                    }
+                }
+    
+                var porcentagemAcertos = (respostasCorretasCount / totalPerguntas) * 100;
+    
+                if (porcentagemAcertos >= 60) {
+                    window.open("pagina_de_confirmacao4.html", "_blank"); // Abre uma nova janela
+                } else {
+                    alert("Você não atingiu a porcentagem mínima de acertos.");
+                }
+            }
+        </script>
+    </body>
+    </html>
